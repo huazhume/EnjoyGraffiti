@@ -83,7 +83,10 @@ FLPaintingDealViewDelegate>
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [self initDatas];
+}
+
+- (void)initDatas {
     self.datalist = [[[FLPaintDBManager shareInstance] getPaintNoteSelf] mutableCopy];
     
     
@@ -98,7 +101,6 @@ FLPaintingDealViewDelegate>
     
     self.myPatingArray = [[FLPaintUserInfoDefault getPaintingArrays] mutableCopy];
     [self.tableView reloadData];
-
 }
 #pragma mark - Views
 - (void)initBaseViews
@@ -376,7 +378,7 @@ FLPaintingDealViewDelegate>
 {
     if (!_sectionView) {
         _sectionView = [FLPaintHomeSectionView loadFromNib];
-        _sectionView.frame = CGRectMake(0, 20, self.tableView.frame.size.width, 40);
+        _sectionView.frame = self.headerView.bounds;
         _sectionView.backgroundColor = [UIColor clearColor];
         _sectionView.delegate = self;
     }
@@ -479,10 +481,10 @@ FLPaintingDealViewDelegate>
 }
 //继续定时器
 - (void)continueTimer {
+    
     if (_marketTimer) {
         _marketTimer.fireDate = [NSDate dateWithTimeIntervalSinceNow:0.5];
     }
 }
-
 
 @end

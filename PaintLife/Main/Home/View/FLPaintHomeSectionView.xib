@@ -62,7 +62,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMh-bn-MuV">
                                     <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="MyNote">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -72,7 +72,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-iN-DbU">
                                     <rect key="frame" x="80" y="0.0" width="80" height="40"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="作品展">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -82,7 +82,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-wK-QY6">
                                     <rect key="frame" x="160" y="0.0" width="80" height="40"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="Activity">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -90,12 +90,12 @@
                                         <action selector="homeButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="iDZ-pc-2oV"/>
                                     </connections>
                                 </button>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLQ-EY-dvD">
-                                    <rect key="frame" x="30" y="43" width="20" height="2"/>
-                                    <color key="backgroundColor" red="0.01176470588" green="0.57647058819999997" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLQ-EY-dvD">
+                                    <rect key="frame" x="30" y="20.5" width="20" height="5"/>
+                                    <color key="backgroundColor" red="0.7590959274829342" green="0.7400515111154331" blue="0.47284711578988048" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="20" id="3wD-nw-Wnf"/>
-                                        <constraint firstAttribute="height" constant="2" id="NNG-uR-55x"/>
+                                        <constraint firstAttribute="height" constant="5" id="NNG-uR-55x"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -107,9 +107,9 @@
                                 <constraint firstAttribute="bottom" secondItem="OdU-wK-QY6" secondAttribute="bottom" id="85b-BA-J9X"/>
                                 <constraint firstAttribute="bottom" secondItem="xW4-iN-DbU" secondAttribute="bottom" id="8LM-cy-MiE"/>
                                 <constraint firstItem="OdU-wK-QY6" firstAttribute="width" secondItem="xW4-iN-DbU" secondAttribute="width" id="HdT-kX-bux"/>
-                                <constraint firstAttribute="bottom" secondItem="WLQ-EY-dvD" secondAttribute="bottom" constant="-5" id="KZK-5h-4IB"/>
                                 <constraint firstItem="OdU-wK-QY6" firstAttribute="top" secondItem="Ek3-AI-mrl" secondAttribute="top" id="SS2-dK-ahk"/>
                                 <constraint firstItem="xW4-iN-DbU" firstAttribute="top" secondItem="Ek3-AI-mrl" secondAttribute="top" id="WgH-YM-Gbf"/>
+                                <constraint firstItem="WLQ-EY-dvD" firstAttribute="centerY" secondItem="cMh-bn-MuV" secondAttribute="centerY" constant="3" id="Xhy-Av-lPk"/>
                                 <constraint firstAttribute="width" constant="240" id="Y4S-x3-048"/>
                                 <constraint firstItem="cMh-bn-MuV" firstAttribute="leading" secondItem="Ek3-AI-mrl" secondAttribute="leading" id="Z6j-ZQ-96I"/>
                                 <constraint firstItem="xW4-iN-DbU" firstAttribute="width" secondItem="cMh-bn-MuV" secondAttribute="width" id="cFH-XN-DJx"/>

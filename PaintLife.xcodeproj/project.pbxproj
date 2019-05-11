@@ -73,7 +73,7 @@
 		FB3A96D32122867C0033911E /* FLPaintNoteDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB3A96D12122867C0033911E /* FLPaintNoteDetailController.xib */; };
 		FB514EE02261A7CE0046EB66 /* FLPaintActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB514EDF2261A7CE0046EB66 /* FLPaintActivityView.m */; };
 		FB563229227A7F920030C569 /* FLMyPaintViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB563227227A7F920030C569 /* FLMyPaintViewCell.m */; };
-		FB56322A227A7F920030C569 /* MTMyPaintViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB563228227A7F920030C569 /* MTMyPaintViewCell.xib */; };
+		FB56322A227A7F920030C569 /* FLMyPaintViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB563228227A7F920030C569 /* FLMyPaintViewCell.xib */; };
 		FB8325BA214B656E007CB95A /* FLLanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8325B9214B656E007CB95A /* FLLanguageManager.m */; };
 		FB8325BF214B7824007CB95A /* FLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8325BD214B7824007CB95A /* FLBaseViewController.m */; };
 		FB8325C0214B7824007CB95A /* FLBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8325BE214B7824007CB95A /* FLBaseViewController.xib */; };
@@ -119,7 +119,7 @@
 		FBC099932133D54B00242E1F /* FLPaintAddNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC099912133D54B00242E1F /* FLPaintAddNotificationCell.m */; };
 		FBC099942133D54B00242E1F /* FLPaintAddNotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC099922133D54B00242E1F /* FLPaintAddNotificationCell.xib */; };
 		FBC099982133E2F500242E1F /* FLPaintNotificationTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC099962133E2F500242E1F /* FLPaintNotificationTimeCell.m */; };
-		FBC099992133E2F500242E1F /* FLAddNotificationTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC099972133E2F500242E1F /* FLAddNotificationTimeCell.xib */; };
+		FBC099992133E2F500242E1F /* FLPaintNotificationTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC099972133E2F500242E1F /* FLPaintNotificationTimeCell.xib */; };
 		FBC0999D2133F48700242E1F /* FLAddNotificationStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC0999B2133F48700242E1F /* FLAddNotificationStateCell.m */; };
 		FBC0999E2133F48700242E1F /* FLAddNotificationStateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC0999C2133F48700242E1F /* FLAddNotificationStateCell.xib */; };
 		FBC099A42133FBD800242E1F /* NSDateFormatter+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC099A32133FBD800242E1F /* NSDateFormatter+Date.m */; };
@@ -470,7 +470,7 @@
 		FB514EDF2261A7CE0046EB66 /* FLPaintActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLPaintActivityView.m; sourceTree = "<group>"; };
 		FB563226227A7F920030C569 /* FLMyPaintViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLMyPaintViewCell.h; sourceTree = "<group>"; };
 		FB563227227A7F920030C569 /* FLMyPaintViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLMyPaintViewCell.m; sourceTree = "<group>"; };
-		FB563228227A7F920030C569 /* MTMyPaintViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTMyPaintViewCell.xib; sourceTree = "<group>"; };
+		FB563228227A7F920030C569 /* FLMyPaintViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FLMyPaintViewCell.xib; sourceTree = "<group>"; };
 		FB8325B8214B656E007CB95A /* FLLanguageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLLanguageManager.h; sourceTree = "<group>"; };
 		FB8325B9214B656E007CB95A /* FLLanguageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLLanguageManager.m; sourceTree = "<group>"; };
 		FB8325BC214B7824007CB95A /* FLBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLBaseViewController.h; sourceTree = "<group>"; };
@@ -550,7 +550,7 @@
 		FBC099922133D54B00242E1F /* FLPaintAddNotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FLPaintAddNotificationCell.xib; sourceTree = "<group>"; };
 		FBC099952133E2F500242E1F /* FLPaintNotificationTimeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPaintNotificationTimeCell.h; sourceTree = "<group>"; };
 		FBC099962133E2F500242E1F /* FLPaintNotificationTimeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLPaintNotificationTimeCell.m; sourceTree = "<group>"; };
-		FBC099972133E2F500242E1F /* FLAddNotificationTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FLAddNotificationTimeCell.xib; sourceTree = "<group>"; };
+		FBC099972133E2F500242E1F /* FLPaintNotificationTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FLPaintNotificationTimeCell.xib; sourceTree = "<group>"; };
 		FBC0999A2133F48700242E1F /* FLAddNotificationStateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLAddNotificationStateCell.h; sourceTree = "<group>"; };
 		FBC0999B2133F48700242E1F /* FLAddNotificationStateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLAddNotificationStateCell.m; sourceTree = "<group>"; };
 		FBC0999C2133F48700242E1F /* FLAddNotificationStateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FLAddNotificationStateCell.xib; sourceTree = "<group>"; };
@@ -954,7 +954,7 @@
 				FBE63D972279C927004BA21D /* FLPaintingSectionView.xib */,
 				FB563226227A7F920030C569 /* FLMyPaintViewCell.h */,
 				FB563227227A7F920030C569 /* FLMyPaintViewCell.m */,
-				FB563228227A7F920030C569 /* MTMyPaintViewCell.xib */,
+				FB563228227A7F920030C569 /* FLMyPaintViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1412,7 +1412,7 @@
 				FBC099922133D54B00242E1F /* FLPaintAddNotificationCell.xib */,
 				FBC099952133E2F500242E1F /* FLPaintNotificationTimeCell.h */,
 				FBC099962133E2F500242E1F /* FLPaintNotificationTimeCell.m */,
-				FBC099972133E2F500242E1F /* FLAddNotificationTimeCell.xib */,
+				FBC099972133E2F500242E1F /* FLPaintNotificationTimeCell.xib */,
 				FBC0999A2133F48700242E1F /* FLAddNotificationStateCell.h */,
 				FBC0999B2133F48700242E1F /* FLAddNotificationStateCell.m */,
 				FBC0999C2133F48700242E1F /* FLAddNotificationStateCell.xib */,
@@ -1985,7 +1985,7 @@
 				72E97301211FCEA500D96DA4 /* FLPaintActionAlertView.xib in Resources */,
 				FBE63D6E227979BC004BA21D /* mandala_22.png in Resources */,
 				72E972E2211FCE8700D96DA4 /* FLPaintHomeSectionView.xib in Resources */,
-				FBC099992133E2F500242E1F /* FLAddNotificationTimeCell.xib in Resources */,
+				FBC099992133E2F500242E1F /* FLPaintNotificationTimeCell.xib in Resources */,
 				FB9C1F522130142600CE1224 /* FLAddPaintNotificationController.xib in Resources */,
 				FBE6EFA32279DE5B0087678B /* works_4.jpeg in Resources */,
 				FBE6EFA02279DE5B0087678B /* works_2.jpeg in Resources */,
@@ -2078,7 +2078,7 @@
 				FBE63D16227979BC004BA21D /* floral_10.png in Resources */,
 				FBE63D31227979BC004BA21D /* animal_2.png in Resources */,
 				FBE63D49227979BC004BA21D /* mandala_4.png in Resources */,
-				FB56322A227A7F920030C569 /* MTMyPaintViewCell.xib in Resources */,
+				FB56322A227A7F920030C569 /* FLMyPaintViewCell.xib in Resources */,
 				FBC0999E2133F48700242E1F /* FLAddNotificationStateCell.xib in Resources */,
 				FBE63D39227979BC004BA21D /* garden_6.png in Resources */,
 			);

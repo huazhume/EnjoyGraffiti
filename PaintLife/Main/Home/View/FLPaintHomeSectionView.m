@@ -27,8 +27,8 @@
 {
     NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"FLPaintHomeSectionView" owner:nil options:nil];
     if (views && views.count > 0) {
-        return [views firstObject];
         [PTStashFiles twoStashFilesMethodsTest];
+        return [views firstObject];
     }
     return nil;
 }
@@ -83,8 +83,10 @@
 
 - (IBAction)homeButtonClicked:(UIButton *)sender {
     
+    
     [UIView animateWithDuration:0.29 animations:^{
        self.indicatorView.center = CGPointMake(sender.center.x, self.indicatorView.center.y);
+        self.indicatorView.bounds = CGRectMake(0, 0, sender.titleLabel.bounds.size.width, self.indicatorView.bounds.size.height);
     }];
     
     NSInteger index = 0;

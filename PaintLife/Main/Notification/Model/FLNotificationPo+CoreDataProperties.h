@@ -2,7 +2,7 @@
 //  FLNotificationPo+CoreDataProperties.h
 //  
 //
-//  Created by xiaobai zhang on 2018/8/29.
+//  Created by xiaobai zhang on 2020/8/29.
 //
 //
 

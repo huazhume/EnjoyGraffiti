@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2018/8/7.
-//  Copyright © 2018年 xiaobai zhang. All rights reserved.
+//  Created by xiaobai zhang on 2020/8/7.
+//  Copyright © 2020年 xiaobai zhang. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -15,7 +15,6 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "FLPaintHomeWebModel.h"
 #import "PLWebViewController.h"
-#import "ViewController.h"
 #import "FLPaintUserInfoDefault.h"
 #import "FLPaintLaunchController.h"
 #import <JPUSHService.h>
@@ -167,6 +166,7 @@
 {
 
 }
+
 - (void)configUSharePlatforms
 {
     [UMConfigure initWithAppkey:@"5cca56f34ca3572cd10000cc" channel:nil];

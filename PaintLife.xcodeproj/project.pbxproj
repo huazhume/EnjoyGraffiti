@@ -49,7 +49,6 @@
 		72E9733E211FD30C00D96DA4 /* UIColor+CHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E97339211FD30C00D96DA4 /* UIColor+CHex.m */; };
 		72E9733F211FD30C00D96DA4 /* UITableViewCell+Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E9733B211FD30C00D96DA4 /* UITableViewCell+Identifier.m */; };
 		72E97340211FD30C00D96DA4 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E9733D211FD30C00D96DA4 /* UITextView+Placeholder.m */; };
-		72E97345211FD68D00D96DA4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E97343211FD68C00D96DA4 /* ViewController.m */; };
 		72E9734C211FD90600D96DA4 /* UIImage+Compress.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E9734A211FD90600D96DA4 /* UIImage+Compress.m */; };
 		D138E1478A5DEC49E5A98D5F /* libPods-PaintLifeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F871E6CE11387C8E90F083C /* libPods-PaintLifeTests.a */; };
 		FB0A37612123EB83007CB0DC /* UIView+Rander.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0A37602123EB82007CB0DC /* UIView+Rander.m */; };
@@ -136,6 +135,12 @@
 		FBD9499B223F47B800B92500 /* FLPaintHomeWebModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9499A223F47B800B92500 /* FLPaintHomeWebModel.m */; };
 		FBD9DC63211BE0CB001CE04E /* MTCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBD9DC61211BE0CB001CE04E /* MTCoreDataModel.xcdatamodeld */; };
 		FBD9DDAA228691B300C0D480 /* PTStashFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9DDA9228691B300C0D480 /* PTStashFiles.m */; };
+		FBD9DDAD2286C51B00C0D480 /* PTTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9DDAC2286C51B00C0D480 /* PTTabViewController.m */; };
+		FBD9DDB32286CF3500C0D480 /* PTFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9DDB22286CF3500C0D480 /* PTFirstViewController.m */; };
+		FBD9DDB62286CF4400C0D480 /* PTSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9DDB52286CF4300C0D480 /* PTSecondViewController.m */; };
+		FBD9DDB92286CF5200C0D480 /* PTThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9DDB82286CF5200C0D480 /* PTThirdViewController.m */; };
+		FBD9DDBC2286CF6300C0D480 /* PTFourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9DDBB2286CF6300C0D480 /* PTFourthViewController.m */; };
+		FBD9DDBF2286CF7200C0D480 /* PTFifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9DDBE2286CF7200C0D480 /* PTFifthViewController.m */; };
 		FBDDBE24213782A7002A88FE /* FLPaintLanguageController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDDBE22213782A7002A88FE /* FLPaintLanguageController.m */; };
 		FBDDBE25213782A7002A88FE /* FLPaintLanguageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDDBE23213782A7002A88FE /* FLPaintLanguageController.xib */; };
 		FBDDBE292137831F002A88FE /* FLPaintLanguageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDDBE272137831F002A88FE /* FLPaintLanguageViewCell.m */; };
@@ -417,8 +422,6 @@
 		72E9733B211FD30C00D96DA4 /* UITableViewCell+Identifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Identifier.m"; sourceTree = "<group>"; };
 		72E9733C211FD30C00D96DA4 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		72E9733D211FD30C00D96DA4 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
-		72E97343211FD68C00D96DA4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		72E97344211FD68C00D96DA4 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		72E97348211FD81F00D96DA4 /* MTCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCommons.h; sourceTree = "<group>"; };
 		72E97349211FD81F00D96DA4 /* MTHeaderPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHeaderPrefix.pch; sourceTree = "<group>"; };
 		72E9734A211FD90600D96DA4 /* UIImage+Compress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Compress.m"; sourceTree = "<group>"; };
@@ -578,6 +581,18 @@
 		FBD9DC62211BE0CB001CE04E /* MTCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MTCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		FBD9DDA8228691B300C0D480 /* PTStashFiles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTStashFiles.h; sourceTree = "<group>"; };
 		FBD9DDA9228691B300C0D480 /* PTStashFiles.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTStashFiles.m; sourceTree = "<group>"; };
+		FBD9DDAB2286C51B00C0D480 /* PTTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTTabViewController.h; sourceTree = "<group>"; };
+		FBD9DDAC2286C51B00C0D480 /* PTTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTTabViewController.m; sourceTree = "<group>"; };
+		FBD9DDB12286CF3500C0D480 /* PTFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTFirstViewController.h; sourceTree = "<group>"; };
+		FBD9DDB22286CF3500C0D480 /* PTFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTFirstViewController.m; sourceTree = "<group>"; };
+		FBD9DDB42286CF4300C0D480 /* PTSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTSecondViewController.h; sourceTree = "<group>"; };
+		FBD9DDB52286CF4300C0D480 /* PTSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTSecondViewController.m; sourceTree = "<group>"; };
+		FBD9DDB72286CF5200C0D480 /* PTThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTThirdViewController.h; sourceTree = "<group>"; };
+		FBD9DDB82286CF5200C0D480 /* PTThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTThirdViewController.m; sourceTree = "<group>"; };
+		FBD9DDBA2286CF6300C0D480 /* PTFourthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTFourthViewController.h; sourceTree = "<group>"; };
+		FBD9DDBB2286CF6300C0D480 /* PTFourthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTFourthViewController.m; sourceTree = "<group>"; };
+		FBD9DDBD2286CF7200C0D480 /* PTFifthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTFifthViewController.h; sourceTree = "<group>"; };
+		FBD9DDBE2286CF7200C0D480 /* PTFifthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTFifthViewController.m; sourceTree = "<group>"; };
 		FBDDBE21213782A7002A88FE /* FLPaintLanguageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPaintLanguageController.h; sourceTree = "<group>"; };
 		FBDDBE22213782A7002A88FE /* FLPaintLanguageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLPaintLanguageController.m; sourceTree = "<group>"; };
 		FBDDBE23213782A7002A88FE /* FLPaintLanguageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FLPaintLanguageController.xib; sourceTree = "<group>"; };
@@ -962,8 +977,6 @@
 		72E972BD211FCE8700D96DA4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				72E97344211FD68C00D96DA4 /* ViewController.h */,
-				72E97343211FD68C00D96DA4 /* ViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1296,6 +1309,18 @@
 				FB8325BC214B7824007CB95A /* FLBaseViewController.h */,
 				FB8325BD214B7824007CB95A /* FLBaseViewController.m */,
 				FB8325BE214B7824007CB95A /* FLBaseViewController.xib */,
+				FBD9DDAB2286C51B00C0D480 /* PTTabViewController.h */,
+				FBD9DDAC2286C51B00C0D480 /* PTTabViewController.m */,
+				FBD9DDB12286CF3500C0D480 /* PTFirstViewController.h */,
+				FBD9DDB22286CF3500C0D480 /* PTFirstViewController.m */,
+				FBD9DDB42286CF4300C0D480 /* PTSecondViewController.h */,
+				FBD9DDB52286CF4300C0D480 /* PTSecondViewController.m */,
+				FBD9DDB72286CF5200C0D480 /* PTThirdViewController.h */,
+				FBD9DDB82286CF5200C0D480 /* PTThirdViewController.m */,
+				FBD9DDBA2286CF6300C0D480 /* PTFourthViewController.h */,
+				FBD9DDBB2286CF6300C0D480 /* PTFourthViewController.m */,
+				FBD9DDBD2286CF7200C0D480 /* PTFifthViewController.h */,
+				FBD9DDBE2286CF7200C0D480 /* PTFifthViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2208,6 +2233,7 @@
 				72E972DE211FCE8700D96DA4 /* FLPaintNoteSettingView.m in Sources */,
 				FB9B4AA82261ABCC001654FE /* FLPaintHotItemView.m in Sources */,
 				72E97330211FD2B900D96DA4 /* FLSanboxFile.m in Sources */,
+				FBD9DDB92286CF5200C0D480 /* PTThirdViewController.m in Sources */,
 				FBDDBE292137831F002A88FE /* FLPaintLanguageViewCell.m in Sources */,
 				FBDDBE24213782A7002A88FE /* FLPaintLanguageController.m in Sources */,
 				FBDDBE542137B431002A88FE /* FLPaintingPushView.m in Sources */,
@@ -2230,10 +2256,12 @@
 				72E972E1211FCE8700D96DA4 /* FLPaintHomeSectionView.m in Sources */,
 				FBE63D8B2279AAE7004BA21D /* FLPaintingMoreController.m in Sources */,
 				FBE63C6322797327004BA21D /* FLPaintingItemCell.m in Sources */,
+				FBD9DDAD2286C51B00C0D480 /* PTTabViewController.m in Sources */,
 				FBB078A62134E043003510D1 /* RSKInternalUtility.m in Sources */,
 				72E972ED211FCE8700D96DA4 /* FLPaintNoteToolsImageCell.m in Sources */,
 				72E972EC211FCE8700D96DA4 /* FLPaintNoteTextPo+CoreDataProperties.m in Sources */,
 				FBC099982133E2F500242E1F /* FLPaintNotificationTimeCell.m in Sources */,
+				FBD9DDBF2286CF7200C0D480 /* PTFifthViewController.m in Sources */,
 				FBDDBE4D2137B253002A88FE /* EBBannerWindow.m in Sources */,
 				FBC1CC6921832004008CB13C /* FLPaintWeatherAlertView.m in Sources */,
 				FB563229227A7F920030C569 /* FLMyPaintViewCell.m in Sources */,
@@ -2266,14 +2294,15 @@
 				72E972E6211FCE8700D96DA4 /* FLPaintImagePo+CoreDataClass.m in Sources */,
 				FBB078A82134E043003510D1 /* UIApplication+RSKImageCropper.m in Sources */,
 				FB2151B4213684F40003845A /* FLPaintNotificationVo.m in Sources */,
+				FBD9DDB32286CF3500C0D480 /* PTFirstViewController.m in Sources */,
 				FB0A37662123FF9F007CB0DC /* FLPaintToastView.m in Sources */,
 				FB9C1F47212FA9CF00CE1224 /* FLPaintNotificationController.m in Sources */,
 				FBB078A42134E043003510D1 /* RSKImagePicker.m in Sources */,
 				72E97304211FCEA500D96DA4 /* FLPaintNavigationView.m in Sources */,
-				72E97345211FD68D00D96DA4 /* ViewController.m in Sources */,
 				FBE63D8622798AA8004BA21D /* FLLinkedListQueue.m in Sources */,
 				72E972F1211FCE8700D96DA4 /* FLPaintNoteToolsView.m in Sources */,
 				FB874ACA212160FF0050DD58 /* PLEditStyleTableView.m in Sources */,
+				FBD9DDBC2286CF6300C0D480 /* PTFourthViewController.m in Sources */,
 				FB8325BA214B656E007CB95A /* FLLanguageManager.m in Sources */,
 				FBD9499B223F47B800B92500 /* FLPaintHomeWebModel.m in Sources */,
 				72E97302211FCEA500D96DA4 /* FLPaintActionSheetView.m in Sources */,
@@ -2286,6 +2315,7 @@
 				FBB5E38B212EB613008A3F07 /* FLPaintSettingProfileCell.m in Sources */,
 				FBDDBE4C2137B253002A88FE /* EBBannerViewMaker.m in Sources */,
 				FBB078AD213539AF003510D1 /* FLPaintUserInfoDefault.m in Sources */,
+				FBD9DDB62286CF4400C0D480 /* PTSecondViewController.m in Sources */,
 				FBD94996223F3BD000B92500 /* PLWebViewController.m in Sources */,
 				FBD9DDAA228691B300C0D480 /* PTStashFiles.m in Sources */,
 			);

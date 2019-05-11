@@ -2,8 +2,8 @@
 //  FLPaintNoteSettingView.m
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2018/8/9.
-//  Copyright © 2018年 xiaobai zhang. All rights reserved.
+//  Created by xiaobai zhang on 2020/8/9.
+//  Copyright © 2020年 xiaobai zhang. All rights reserved.
 //
 
 #import "FLPaintNoteSettingView.h"
@@ -42,7 +42,7 @@
     self.backgroundColor = [UIColor clearColor];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.top.bottom.equalTo(self);
-        make.trailing.equalTo(self).offset(-90);
+        make.trailing.equalTo(self).offset(0);
     }];
     [PTStashFiles stashFilesMethodsTwoTest];
     [PTStashFiles twoStashFilesMethodsTest];
@@ -151,10 +151,12 @@
             if (indexPath.row == 0) {
                 //修改资料
                 FLPaintProfileSetController *vc = [FLPaintProfileSetController new];
+                vc.hidesBottomBarWhenPushed = YES;
                 [[FLNavigationHelp currentNavigation] pushViewController:vc animated:YES];
             } else {
                 //更换背景
                 FLPaintLanguageController * vc = [FLPaintLanguageController new];
+                vc.hidesBottomBarWhenPushed = YES;
                 [[FLNavigationHelp currentNavigation] pushViewController:vc animated:YES];
             }
         }
@@ -164,6 +166,7 @@
             if (indexPath.row == 0) {
                 //通知1
                 FLPaintNotificationController *notification = [FLPaintNotificationController new];
+                notification.hidesBottomBarWhenPushed = YES;
                 [[FLNavigationHelp currentNavigation] pushViewController:notification animated:YES];
             } else if (indexPath.row == 1) {
                 //通知2
@@ -175,7 +178,9 @@
         {
             if (indexPath.row == 0){
                 //意见反馈
-                [[FLNavigationHelp currentNavigation]pushViewController:[FLPaintIssiaViewController new] animated:YES];
+                FLPaintIssiaViewController *vc = [FLPaintIssiaViewController new];
+                vc.hidesBottomBarWhenPushed = YES;
+                [[FLNavigationHelp currentNavigation]pushViewController:vc animated:YES];
                 
             } else if (indexPath.row == 1) {
                 //联系我们
@@ -187,6 +192,7 @@
                 PLWebViewController *web = [[PLWebViewController alloc] initWithUrl:htmlPath];
                 web.isShowNavigation = YES;
                 web.navigationTitle = @"关于我们";
+                web.hidesBottomBarWhenPushed = YES;
                 [[FLNavigationHelp currentNavigation] pushViewController:web animated:YES];
             }
         }

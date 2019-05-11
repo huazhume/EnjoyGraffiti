@@ -2,8 +2,8 @@
 //  FLPaintHomeWebModel.h
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2019/3/18.
-//  Copyright © 2019年 xiaobai zhang. All rights reserved.
+//  Created by xiaobai zhang on 2020/3/18.
+//  Copyright © 2020年 xiaobai zhang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -2,8 +2,8 @@
 //  FLPaintHomePaintViewCell.m
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2019/5/1.
-//  Copyright © 2019年 xiaobai zhang. All rights reserved.
+//  Created by xiaobai zhang on 2020/5/1.
+//  Copyright © 2020年 xiaobai zhang. All rights reserved.
 //
 
 #import "FLPaintHomePaintViewCell.h"
@@ -126,6 +126,7 @@
     
     FLPaintingController *paint = [[FLPaintingController alloc] init];
     paint.imageName = [imageName substringFromIndex:4];
+    paint.hidesBottomBarWhenPushed = YES;
     [[FLNavigationHelp currentNavigation] pushViewController:paint animated:YES];
 }
 
@@ -155,6 +156,7 @@
     FLPaintingMoreController *vc = [FLPaintingMoreController new];
     vc.index = [items indexOfObject:self.titleLabel.text];
     vc.subTitle = @"分类";
+    vc.hidesBottomBarWhenPushed = YES;
     [[FLNavigationHelp currentNavigation] pushViewController:vc animated:YES];
 }
 

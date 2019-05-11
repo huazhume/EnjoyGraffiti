@@ -2,8 +2,8 @@
 //  FLPaintFeedSectionView.m
 //  finbtc
 //
-//  Created by xiaobai zhang on 2019/1/16.
-//  Copyright © 2019 MTY. All rights reserved.
+//  Created by xiaobai zhang on 2020/1/16.
+//  Copyright © 2020 MTY. All rights reserved.
 //
 
 #import "FLPaintFeedSectionView.h"

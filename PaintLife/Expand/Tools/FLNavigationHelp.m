@@ -2,8 +2,8 @@
 //  FLNavigationHelp.m
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2018/8/23.
-//  Copyright © 2018年 xiaobai zhang. All rights reserved.
+//  Created by xiaobai zhang on 2020/8/23.
+//  Copyright © 2020年 xiaobai zhang. All rights reserved.
 //
 
 #import "FLNavigationHelp.h"
@@ -14,8 +14,11 @@
 {
     UIViewController *rootController = [UIApplication sharedApplication].keyWindow.rootViewController;
     UINavigationController *navigation;
-    if([rootController isKindOfClass:[UINavigationController class]]){
-        navigation = (UINavigationController *)rootController;
+    if([rootController isKindOfClass:[UITabBarController class]]){
+        
+        UITabBarController *tab = (UITabBarController *)rootController;
+        navigation = tab.selectedViewController;
+        
     }
     return navigation;
 }

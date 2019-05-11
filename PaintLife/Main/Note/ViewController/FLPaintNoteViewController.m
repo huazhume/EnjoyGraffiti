@@ -2,8 +2,8 @@
 //  FLPaintNoteViewController.m
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2018/8/7.
-//  Copyright © 2018年 xiaobai zhang. All rights reserved.
+//  Created by xiaobai zhang on 2020/8/7.
+//  Copyright © 2020年 xiaobai zhang. All rights reserved.
 //
 
 #import "FLPaintNoteViewController.h"
@@ -367,7 +367,11 @@ FLPaintWeatherAlertViewDelegate>
 #pragma mark - FLPaintNavigationViewDelegate
 - (void)leftAction
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    if (self.isDisMiss) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
     
 }
 
@@ -413,7 +417,11 @@ FLPaintWeatherAlertViewDelegate>
     noteModel.weather = self.weatherTitle;
     [[FLPaintDBManager shareInstance] insertDatas:@[noteModel] withType:MTCoreDataContentTypeNoteSelf];
     [[FLPaintDBManager shareInstance] insertDatas:self.datalist withType:MTCoreDataContentTypeNoteContent];
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.isDisMiss) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+         [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 #pragma mark - getter

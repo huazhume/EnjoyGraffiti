@@ -2,8 +2,8 @@
 //  UIView+Rander.m
 //  finbtc
 //
-//  Created by XT Xiong on 2018/3/19.
-//  Copyright © 2018年 MTY. All rights reserved.
+//  Created by XT Xiong on 2020/3/19.
+//  Copyright © 2020年 MTY. All rights reserved.
 //
 
 #import "UIView+Rander.h"

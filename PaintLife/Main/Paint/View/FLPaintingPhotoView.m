@@ -2,8 +2,8 @@
 //  FLPaintingPhotoView.m
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2019/5/1.
-//  Copyright © 2019年 xiaobai zhang. All rights reserved.
+//  Created by xiaobai zhang on 2020/5/1.
+//  Copyright © 2020年 xiaobai zhang. All rights reserved.
 //
 
 #import "FLPaintingPhotoView.h"
@@ -92,6 +92,7 @@
     UIImageWriteToSavedPhotosAlbum(self.imageView.image, nil, nil, nil);
     FLPaintNoteViewController *vc = [FLPaintNoteViewController new];
     vc.imageUrl = self.fileName;
+    vc.hidesBottomBarWhenPushed = YES;
     [[FLNavigationHelp currentNavigation] pushViewController:vc animated:YES];
     [self removeFromSuperview];
 }

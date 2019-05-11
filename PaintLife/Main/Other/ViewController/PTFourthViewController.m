@@ -1,12 +1,12 @@
 //
-//  ViewController.m
+//  PTFourthViewController.m
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2018/8/7.
-//  Copyright © 2018年 xiaobai zhang. All rights reserved.
+//  Created by xiaobai zhang on 2020/5/11.
+//  Copyright © 2020 xiaobai zhang. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PTFourthViewController.h"
 #import "FLPaintHomeSectionView.h"
 #import "FLPaintHomeTextViewCell.h"
 #import "UITableViewCell+Identifier.h"
@@ -34,50 +34,26 @@
 #import <UMShare/UMSocialDataManager.h>
 #import <UShareUI/UShareUI.h>
 
-@interface ViewController ()
+@interface PTFourthViewController ()
 <UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate,
 FLPaintHomeSectionViewDelegate,
 FLPaintHomeEmptyViewDelegate,
 FLPaintingDealViewDelegate>
 
+
 @property (weak, nonatomic) IBOutlet PLEditStyleTableView *tableView;
-@property (strong, nonatomic) FLPaintHomeSectionView *sectionView;
-@property (assign, nonatomic) CGPoint scrollViewOldOffset;
 @property (strong, nonatomic) NSMutableArray *datalist;
-@property (weak, nonatomic) IBOutlet FLPaintNoteSettingView *setView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *setViewLeadingCostraint;
-@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
-@property (weak, nonatomic) IBOutlet UIView *headerView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerViewTopConstraint;
-
-@property (assign, nonatomic) BOOL isAnimationing;
-@property (strong, nonatomic) NSDate *lastScrollDate;
-@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *setViewLeadingConstraint;
-
-@property (strong, nonatomic) FLPaintHomeWebModel *webModel;
-@property (weak, nonatomic) IBOutlet FLPaintActivityView *activityView;
-@property (strong, nonatomic) FLPaintingDealView *paintView;
-@property (weak, nonatomic) IBOutlet UIView *paintBgView;
 
 @property (strong, nonatomic) NSMutableArray *myPatingArray;
 
 
-@property (nonatomic, strong) NSTimer *marketTimer;
-@property (nonatomic, assign) NSInteger totalTimes;
-
 @end
 
-@implementation ViewController
+@implementation PTFourthViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    if (![FLPaintUserInfoDefault isPaintAgreeSecretList]) {
-       [self presentViewController:[FLPaintLaunchController new] animated:NO completion:nil];
-    }
     [self initBaseViews];
-    [self registNotifications];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -88,17 +64,6 @@ FLPaintingDealViewDelegate>
 
 - (void)initDatas {
     self.datalist = [[[FLPaintDBManager shareInstance] getPaintNoteSelf] mutableCopy];
-    
-    
-    NSString * path =[[FLMediaFileManager sharedManager] getMediaFilePathWithAndSanBoxType:SANBOX_DOCUMNET_TYPE AndMediaType:FILE_IMAGE_TYPE];
-    NSString *fileName = @"homeStyle";
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@",path,fileName];
-    self.bgImageView.image = [UIImage imageWithContentsOfFile:filePath];
-    
-    FLPaintMeModel *meModel = [FLPaintUserInfoDefault getPaintUserDefaultMeModel];
-    self.sectionView.name = meModel.name;
-    [self.setView refreshData];
-    
     self.myPatingArray = [[FLPaintUserInfoDefault getPaintingArrays] mutableCopy];
     [self.tableView reloadData];
 }
@@ -112,10 +77,6 @@ FLPaintingDealViewDelegate>
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.navigationController.navigationBar.hidden = YES;
-    self.logoImageView.layer.cornerRadius = self.logoImageView.bounds.size.height / 2.0;
-    self.logoImageView.layer.masksToBounds = YES;
-    
-    [self.headerView addSubview:self.sectionView];
     MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     
     NSMutableArray *muImage = [NSMutableArray array];
@@ -134,17 +95,6 @@ FLPaintingDealViewDelegate>
     header.stateLabel.hidden = YES;
     self.tableView.mj_header = header;
     
-    
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(settingViewIsShow:)];
-    recognizer.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.setView addGestureRecognizer:recognizer];
-    
-    self.tableView.hidden = YES;
-    self.activityView.hidden = NO;
-    
-//    self.setViewLeadingCostraint.constant = -SCREEN_WIDTH;
-    [self.paintBgView addSubview:self.paintView];
-    [self addTimer];
 }
 
 - (void)loadNewData
@@ -152,49 +102,6 @@ FLPaintingDealViewDelegate>
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
     });
-}
-
-- (void)registNotifications
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientChange:)name:UIDeviceOrientationDidChangeNotification object:nil];
-    
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(languageChangeAction) name:kLanguageNotification object:nil];
-    
-}
-
-- (void)languageChangeAction
-{
-    [self.sectionView reloadData];
-}
-
-- (void)orientChange:(NSNotification *)noti
-{
-//    self.setViewLeadingCostraint.constant = -SCREEN_WIDTH;
-
-    UIDeviceOrientation  orient = [UIDevice currentDevice].orientation;
-    switch (orient)
-    {
-        case UIDeviceOrientationPortrait:
-            [self.setView changeDeviceOrienationIsV:YES];
-            
-            break;
-        case UIDeviceOrientationLandscapeLeft:
-            [self.setView changeDeviceOrienationIsV:NO];
-            
-            break;
-        case UIDeviceOrientationPortraitUpsideDown:
-            [self.setView changeDeviceOrienationIsV:YES];
-            
-            break;
-        case UIDeviceOrientationLandscapeRight:
-            [self.setView changeDeviceOrienationIsV:NO];
-            
-            break;
-            
-        default:
-            break;
-    }
 }
 
 
@@ -281,7 +188,7 @@ FLPaintingDealViewDelegate>
                                                 
                                                 if (indexPath.section == 0) {
                                                     
-                                                   
+                                                    
                                                 } else {
                                                     FLPaintNoteModel *model = self.datalist[indexPath.row];
                                                     [[FLPaintDBManager shareInstance]deletePaintNoteWithNoteId:model.noteId];
@@ -289,10 +196,10 @@ FLPaintingDealViewDelegate>
                                                     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationAutomatic)];
                                                     [tableView setEditing:NO animated:YES];
                                                 }
-                                               
+                                                
                                                 [self.tableView reloadData];
                                             }];
-
+                                            
                                         }];
     readAction.backgroundColor = [UIColor whiteColor];
     return @[readAction];
@@ -329,62 +236,9 @@ FLPaintingDealViewDelegate>
     detailVC.color = model.sectionColor;
     detailVC.weather = model.weather;
     detailVC.isStatusBarHidden = [UIApplication sharedApplication].isStatusBarHidden;
+    detailVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
-
-#pragma mark - FLPaintHomeSectionViewDelegate
-- (void)homeNoteAction
-{
-    FLPaintNoteViewController *noteVC = [[FLPaintNoteViewController alloc] init];
-    [self.navigationController pushViewController:noteVC animated:YES];
-}
-
-- (void)homeSettingAction
-{
-    [self settingViewIsShow:YES];
-}
-- (IBAction)setViewDismissAction:(id)sender
-{
-    [self settingViewIsShow:NO];
-}
-
-- (void)settingViewIsShow:(BOOL)isShow
-{
-    [UIView animateWithDuration:0.29 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.setViewLeadingCostraint.constant = isShow ? 0.f : -SCREEN_WIDTH;
-        [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        
-    }];
-}
-
-- (void)homeButtonClickedWithIndex:(NSInteger)index
-{
-    self.activityView.hidden = (index != 1);
-    self.tableView.hidden =  (index != 2);
-    self.paintView.hidden = (index != 0);
-    self.paintBgView.hidden = (index != 0);
-}
-
-#pragma mark - FLPaintHomeEmptyViewDelegate
-- (void)emptyNoteAction
-{
-    FLPaintNoteViewController *noteVC = [[FLPaintNoteViewController alloc] init];
-    [self.navigationController pushViewController:noteVC animated:YES];
-}
-
-#pragma mark - getter
-- (UIView *)sectionView
-{
-    if (!_sectionView) {
-        _sectionView = [FLPaintHomeSectionView loadFromNib];
-        _sectionView.frame = self.headerView.bounds;
-        _sectionView.backgroundColor = [UIColor clearColor];
-        _sectionView.delegate = self;
-    }
-    return _sectionView;
-}
-
 - (NSMutableArray *)datalist
 {
     if (!_datalist) {
@@ -393,98 +247,6 @@ FLPaintingDealViewDelegate>
     return _datalist;
 }
 
-- (FLPaintingDealView *)paintView
-{
-    if (!_paintView) {
-        _paintView = [FLPaintingDealView loadFromNib];
-        _paintView.hidden = YES;
-        _paintView.frame = self.tableView.bounds;
-        _paintView.delegate = self;
-    }
-    return _paintView;
-}
-
-- (void)sharedImage:(UIImage *)image
-{
-    
-    NSMutableArray *shareTypes = [@[@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_WechatTimeLine),@(UMSocialPlatformType_Qzone)] mutableCopy];
-    
-    if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
-        [shareTypes removeObject:@(UMSocialPlatformType_QQ)];
-        [shareTypes removeObject:@(UMSocialPlatformType_Qzone)];
-    }
-    
-    
-    if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_WechatSession]) {
-        [shareTypes removeObject:@(UMSocialPlatformType_WechatSession)];
-        [shareTypes removeObject:@(UMSocialPlatformType_WechatTimeLine)];
-    }
-    [UMSocialUIManager setPreDefinePlatforms:shareTypes];
-    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-        
-        
-        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-        //创建图片内容对象
-        UMShareImageObject *shareObject = [[UMShareImageObject alloc] init];
-        //如果有缩略图，则设置缩略图
-        shareObject.thumbImage = image;
-        [shareObject setShareImage:image];
-        messageObject.shareObject = shareObject;
-        //调用分享接口
-        [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
-            if (error) {
-                NSLog(@"************Share fail with error %@*********",error);
-            }else{
-                NSLog(@"response data is %@",data);
-            }
-        }];
-    }];
-}
-
-
-- (NSTimer *)marketTimer
-{
-    if (!_marketTimer) {
-        _marketTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
-    }
-    return _marketTimer;
-}
-
-
-
-#pragma mark - Timer
-//添加定时器
--(void)addTimer{
-    [[NSRunLoop currentRunLoop] addTimer:self.marketTimer forMode:NSRunLoopCommonModes];
-}
-
-- (void)timerAction:(id)sender
-{
-    self.totalTimes ++;
-    [self.activityView.hotView switchCurrentBanner];
-}
-
-//删除定时器
--(void)cleanTimer{
-    
-    if (_marketTimer) {
-        [_marketTimer invalidate];
-        _marketTimer = nil;
-    }
-}
-
--(void)pauseTimer{
-    
-    if (_marketTimer) {
-        _marketTimer.fireDate = [NSDate distantFuture];
-    }
-}
-//继续定时器
-- (void)continueTimer {
-    
-    if (_marketTimer) {
-        _marketTimer.fireDate = [NSDate dateWithTimeIntervalSinceNow:0.5];
-    }
-}
 
 @end
+

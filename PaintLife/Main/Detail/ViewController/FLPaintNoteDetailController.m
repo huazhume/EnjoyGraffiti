@@ -2,8 +2,8 @@
 //  FLPaintNoteDetailController.m
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2018/8/14.
-//  Copyright © 2018年 xiaobai zhang. All rights reserved.
+//  Created by xiaobai zhang on 2020/8/14.
+//  Copyright © 2020年 xiaobai zhang. All rights reserved.
 //
 
 #import "FLPaintNoteDetailController.h"

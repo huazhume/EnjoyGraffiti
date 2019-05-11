@@ -2,7 +2,7 @@
 //  EBEmptyWindow.m
 //  EBBannerView
 //
-//  Created by WTSD on 2018/1/10.
+//  Created by WTSD on 2020/1/10.
 //
 
 #import "EBEmptyWindow.h"

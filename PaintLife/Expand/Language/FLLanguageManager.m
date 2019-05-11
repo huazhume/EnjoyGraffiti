@@ -2,8 +2,8 @@
 //  FLLanguageManager.m
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2018/9/14.
-//  Copyright © 2018年 xiaobai zhang. All rights reserved.
+//  Created by xiaobai zhang on 2020/9/14.
+//  Copyright © 2020年 xiaobai zhang. All rights reserved.
 //
 
 #import "FLLanguageManager.h"

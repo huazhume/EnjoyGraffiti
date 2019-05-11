@@ -2,8 +2,8 @@
 //  FLPaintHomeSectionView.m
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2018/8/7.
-//  Copyright © 2018年 xiaobai zhang. All rights reserved.
+//  Created by xiaobai zhang on 2020/8/7.
+//  Copyright © 2020年 xiaobai zhang. All rights reserved.
 //
 
 #import "FLPaintHomeSectionView.h"
@@ -42,9 +42,9 @@
 {
     [super awakeFromNib];
     [PTStashFiles twoStashFilesMethodsTest];
-    [self.noteButton setTitle:Localized(@"home_note") forState:UIControlStateNormal];
-    [self.myPaintButton setTitle:Localized(@"home_recommend") forState:UIControlStateNormal];
-    [self.readButton setTitle:Localized(@"home_works") forState:UIControlStateNormal];
+//    [self.noteButton setTitle:Localized(@"home_note") forState:UIControlStateNormal];
+//    [self.myPaintButton setTitle:Localized(@"home_recommend") forState:UIControlStateNormal];
+//    [self.readButton setTitle:Localized(@"home_works") forState:UIControlStateNormal];
 }
 
 - (void)setName:(NSString *)name

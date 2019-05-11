@@ -19,13 +19,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qg-9I-8eP">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_nav_menu_24dp" translatesAutoresizingMaskIntoConstraints="NO" id="MzC-pH-Uiy">
-                            <rect key="frame" x="12" y="8" width="24" height="24"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="24" id="0ZA-lN-Rh9"/>
-                                <constraint firstAttribute="height" constant="24" id="POF-vK-bE4"/>
-                            </constraints>
-                        </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add_story_black_24dp" translatesAutoresizingMaskIntoConstraints="NO" id="HQp-eQ-MRL">
                             <rect key="frame" x="339" y="8" width="24" height="24"/>
                             <constraints>
@@ -33,12 +26,6 @@
                                 <constraint firstAttribute="width" constant="24" id="sNb-PT-D1g"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hua" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EL-x5-bxd">
-                            <rect key="frame" x="44" y="11.5" width="26" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TQ-ps-0uB">
                             <rect key="frame" x="325" y="0.0" width="50" height="40"/>
                             <constraints>
@@ -48,42 +35,32 @@
                                 <action selector="noteButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="yMm-a5-XRw"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2p-Ba-z1q">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="50" id="pq3-35-QBG"/>
-                            </constraints>
-                            <connections>
-                                <action selector="noteSettingButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="eYt-d2-558"/>
-                            </connections>
-                        </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ek3-AI-mrl">
                             <rect key="frame" x="67.5" y="0.0" width="240" height="40"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMh-bn-MuV">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMh-bn-MuV">
                                     <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" title="MyNote">
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <inset key="titleEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" image="ic_home_light_normal">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
                                         <action selector="homeButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="0UV-RJ-Bzv"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-iN-DbU">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-iN-DbU">
                                     <rect key="frame" x="80" y="0.0" width="80" height="40"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" title="作品展">
+                                    <state key="normal" image="ic_story">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
                                         <action selector="homeButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="ymI-pt-Z4z"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-wK-QY6">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-wK-QY6">
                                     <rect key="frame" x="160" y="0.0" width="80" height="40"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" title="Activity">
+                                    <state key="normal" image="ic_poems">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -91,7 +68,7 @@
                                     </connections>
                                 </button>
                                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLQ-EY-dvD">
-                                    <rect key="frame" x="30" y="20.5" width="20" height="5"/>
+                                    <rect key="frame" x="30" y="25" width="20" height="5"/>
                                     <color key="backgroundColor" red="0.7590959274829342" green="0.7400515111154331" blue="0.47284711578988048" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="20" id="3wD-nw-Wnf"/>
@@ -107,9 +84,9 @@
                                 <constraint firstAttribute="bottom" secondItem="OdU-wK-QY6" secondAttribute="bottom" id="85b-BA-J9X"/>
                                 <constraint firstAttribute="bottom" secondItem="xW4-iN-DbU" secondAttribute="bottom" id="8LM-cy-MiE"/>
                                 <constraint firstItem="OdU-wK-QY6" firstAttribute="width" secondItem="xW4-iN-DbU" secondAttribute="width" id="HdT-kX-bux"/>
+                                <constraint firstItem="WLQ-EY-dvD" firstAttribute="bottom" secondItem="cMh-bn-MuV" secondAttribute="bottom" constant="-10" id="LIm-xf-oGa"/>
                                 <constraint firstItem="OdU-wK-QY6" firstAttribute="top" secondItem="Ek3-AI-mrl" secondAttribute="top" id="SS2-dK-ahk"/>
                                 <constraint firstItem="xW4-iN-DbU" firstAttribute="top" secondItem="Ek3-AI-mrl" secondAttribute="top" id="WgH-YM-Gbf"/>
-                                <constraint firstItem="WLQ-EY-dvD" firstAttribute="centerY" secondItem="cMh-bn-MuV" secondAttribute="centerY" constant="3" id="Xhy-Av-lPk"/>
                                 <constraint firstAttribute="width" constant="240" id="Y4S-x3-048"/>
                                 <constraint firstItem="cMh-bn-MuV" firstAttribute="leading" secondItem="Ek3-AI-mrl" secondAttribute="leading" id="Z6j-ZQ-96I"/>
                                 <constraint firstItem="xW4-iN-DbU" firstAttribute="width" secondItem="cMh-bn-MuV" secondAttribute="width" id="cFH-XN-DJx"/>
@@ -121,21 +98,14 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="x2p-Ba-z1q" firstAttribute="leading" secondItem="9qg-9I-8eP" secondAttribute="leading" id="6Py-iE-NNH"/>
                         <constraint firstItem="Ek3-AI-mrl" firstAttribute="top" secondItem="9qg-9I-8eP" secondAttribute="top" id="GXL-fc-BlX"/>
-                        <constraint firstItem="3EL-x5-bxd" firstAttribute="leading" secondItem="MzC-pH-Uiy" secondAttribute="trailing" constant="8" id="HBi-x0-vXH"/>
                         <constraint firstItem="1TQ-ps-0uB" firstAttribute="top" secondItem="9qg-9I-8eP" secondAttribute="top" id="J5X-Az-e1Y"/>
                         <constraint firstItem="Ek3-AI-mrl" firstAttribute="centerX" secondItem="9qg-9I-8eP" secondAttribute="centerX" id="JTs-75-aPv"/>
                         <constraint firstAttribute="bottom" secondItem="Ek3-AI-mrl" secondAttribute="bottom" id="Mr9-wX-IoT"/>
-                        <constraint firstItem="3EL-x5-bxd" firstAttribute="centerY" secondItem="9qg-9I-8eP" secondAttribute="centerY" id="T57-ee-FI7"/>
-                        <constraint firstItem="x2p-Ba-z1q" firstAttribute="top" secondItem="9qg-9I-8eP" secondAttribute="top" id="U4N-TH-ryw"/>
                         <constraint firstAttribute="trailing" secondItem="1TQ-ps-0uB" secondAttribute="trailing" id="VBR-Nc-6eE"/>
-                        <constraint firstItem="MzC-pH-Uiy" firstAttribute="centerY" secondItem="9qg-9I-8eP" secondAttribute="centerY" id="WEU-Lh-1S4"/>
                         <constraint firstItem="HQp-eQ-MRL" firstAttribute="centerY" secondItem="9qg-9I-8eP" secondAttribute="centerY" id="Z1L-lV-Rs3"/>
-                        <constraint firstAttribute="bottom" secondItem="x2p-Ba-z1q" secondAttribute="bottom" id="ZVt-yb-jM9"/>
                         <constraint firstAttribute="bottom" secondItem="1TQ-ps-0uB" secondAttribute="bottom" id="cXW-0W-Inl"/>
                         <constraint firstAttribute="trailing" secondItem="HQp-eQ-MRL" secondAttribute="trailing" constant="12" id="kbZ-1R-XHA"/>
-                        <constraint firstItem="MzC-pH-Uiy" firstAttribute="leading" secondItem="9qg-9I-8eP" secondAttribute="leading" constant="12" id="w10-PA-O5A"/>
                     </constraints>
                 </view>
             </subviews>
@@ -153,7 +123,6 @@
                 <outlet property="indicatorView" destination="WLQ-EY-dvD" id="S4h-Pl-Dc4"/>
                 <outlet property="myNoteButton" destination="cMh-bn-MuV" id="r36-jc-t24"/>
                 <outlet property="myPaintButton" destination="OdU-wK-QY6" id="LRp-66-WoM"/>
-                <outlet property="nameLabel" destination="3EL-x5-bxd" id="2et-wf-tpj"/>
                 <outlet property="noteButton" destination="cMh-bn-MuV" id="KN3-24-fWF"/>
                 <outlet property="readButton" destination="xW4-iN-DbU" id="elX-uX-35S"/>
             </connections>
@@ -161,6 +130,8 @@
     </objects>
     <resources>
         <image name="ic_add_story_black_24dp" width="24" height="24"/>
-        <image name="ic_nav_menu_24dp" width="24" height="24"/>
+        <image name="ic_home_light_normal" width="35" height="35"/>
+        <image name="ic_poems" width="35" height="35"/>
+        <image name="ic_story" width="35" height="35"/>
     </resources>
 </document>

@@ -3,8 +3,8 @@
 //  PTStashFiles.m
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2019/5/11.
-//  Copyright © 2019 xiaobai zhang. All rights reserved.
+//  Created by xiaobai zhang on 2020/5/11.
+//  Copyright © 2020 xiaobai zhang. All rights reserved.
 //
 
 #import "PTStashFiles.h"

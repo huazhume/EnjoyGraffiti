@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G5019" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="MTNoteImagePo" representedClassName="MTNoteImagePo" syncable="YES">
+    <entity name="FLNotificationPo" representedClassName="FLNotificationPo" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notificationId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FLPaintImagePo" representedClassName="FLPaintImagePo" syncable="YES">
         <attribute name="height" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="noteId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sortIndex" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="width" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="MTNotePo" representedClassName="MTNotePo" syncable="YES">
+    <entity name="FLPaintNotePo" representedClassName="FLPaintNotePo" syncable="YES">
         <attribute name="height" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="noteId" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,7 +21,7 @@
         <attribute name="weather" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="width" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="MTNoteTextPo" representedClassName="MTNoteTextPo" syncable="YES">
+    <entity name="FLPaintNoteTextPo" representedClassName="FLPaintNoteTextPo" syncable="YES">
         <attribute name="fontName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fontSize" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="fontType" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -23,16 +29,10 @@
         <attribute name="sortIndex" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="MTNotificationPo" representedClassName="MTNotificationPo" syncable="YES" codeGenerationType="class">
-        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="notificationId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="state" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <elements>
-        <element name="MTNoteImagePo" positionX="0" positionY="72" width="128" height="120"/>
-        <element name="MTNotePo" positionX="27" positionY="126" width="128" height="135"/>
-        <element name="MTNoteTextPo" positionX="-36" positionY="9" width="128" height="135"/>
-        <element name="MTNotificationPo" positionX="9" positionY="117" width="128" height="105"/>
+        <element name="FLPaintImagePo" positionX="0" positionY="72" width="128" height="120"/>
+        <element name="FLPaintNotePo" positionX="27" positionY="126" width="128" height="135"/>
+        <element name="FLPaintNoteTextPo" positionX="-36" positionY="9" width="128" height="135"/>
+        <element name="FLNotificationPo" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

@@ -7,44 +7,44 @@
 //
 
 #import "ViewController.h"
-#import "MTHomeSectionView.h"
-#import "MTHomeTextViewCell.h"
-#import "UITableViewCell+Categoty.h"
-#import "MTNoteViewController.h"
-#import "MTLocalDataManager.h"
-#import "MTHomeEmptyView.h"
-#import "MTNoteModel.h"
+#import "FLPaintHomeSectionView.h"
+#import "FLPaintHomeTextViewCell.h"
+#import "UITableViewCell+Identifier.h"
+#import "FLPaintNoteViewController.h"
+#import "FLPaintDBManager.h"
+#import "FLPaintHomeEmptyView.h"
+#import "FLPaintNoteModel.h"
 #import <MJRefresh/MJRefresh.h>
-#import "MTDeleteStyleTableView.h"
-#import "MTNoteDetailViewController.h"
-#import "MTActionAlertView.h"
-#import "MTLocalDataManager.h"
-#import "MTMediaFileManager.h"
-#import "MTNoteSettingView.h"
-#import "MTMeModel.h"
-#import "MTUserInfoDefault.h"
+#import "PLEditStyleTableView.h"
+#import "FLPaintNoteDetailController.h"
+#import "FLPaintActionAlertView.h"
+#import "FLPaintDBManager.h"
+#import "FLMediaFileManager.h"
+#import "FLPaintNoteSettingView.h"
+#import "FLPaintMeModel.h"
+#import "FLPaintUserInfoDefault.h"
 #import "AppDelegate.h"
-#import "MTHomeWebModel.h"
-#import "FLBaseWebViewController.h"
-#import "MTLaunchController.h"
-#import "MTActivityView.h"
-#import "MTPaintSectionView.h"
-#import "MTPaintWorksView.h"
-#import "MTMyPaintViewCell.h"
+#import "FLPaintHomeWebModel.h"
+#import "PLWebViewController.h"
+#import "FLPaintLaunchController.h"
+#import "FLPaintActivityView.h"
+#import "FLPaintingSectionView.h"
+#import "FLPaintingDealView.h"
+#import "FLMyPaintViewCell.h"
 #import <UMShare/UMSocialDataManager.h>
 #import <UShareUI/UShareUI.h>
 
 @interface ViewController ()
 <UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate,
-MTHomeSectionViewDelegate,
-MTHomeEmptyViewDelegate,
-MTPaintWorksViewDelegate>
+FLPaintHomeSectionViewDelegate,
+FLPaintHomeEmptyViewDelegate,
+FLPaintingDealViewDelegate>
 
-@property (weak, nonatomic) IBOutlet MTDeleteStyleTableView *tableView;
-@property (strong, nonatomic) MTHomeSectionView *sectionView;
+@property (weak, nonatomic) IBOutlet PLEditStyleTableView *tableView;
+@property (strong, nonatomic) FLPaintHomeSectionView *sectionView;
 @property (assign, nonatomic) CGPoint scrollViewOldOffset;
 @property (strong, nonatomic) NSMutableArray *datalist;
-@property (weak, nonatomic) IBOutlet MTNoteSettingView *setView;
+@property (weak, nonatomic) IBOutlet FLPaintNoteSettingView *setView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *setViewLeadingCostraint;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
@@ -55,9 +55,9 @@ MTPaintWorksViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *setViewLeadingConstraint;
 
-@property (strong, nonatomic) MTHomeWebModel *webModel;
-@property (weak, nonatomic) IBOutlet MTActivityView *activityView;
-@property (strong, nonatomic) MTPaintWorksView *paintView;
+@property (strong, nonatomic) FLPaintHomeWebModel *webModel;
+@property (weak, nonatomic) IBOutlet FLPaintActivityView *activityView;
+@property (strong, nonatomic) FLPaintingDealView *paintView;
 @property (weak, nonatomic) IBOutlet UIView *paintBgView;
 
 @property (strong, nonatomic) NSMutableArray *myPatingArray;
@@ -73,8 +73,8 @@ MTPaintWorksViewDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (![MTUserInfoDefault isAgreeSecretList]) {
-       [self presentViewController:[MTLaunchController new] animated:NO completion:nil];
+    if (![FLPaintUserInfoDefault isPaintAgreeSecretList]) {
+       [self presentViewController:[FLPaintLaunchController new] animated:NO completion:nil];
     }
     [self initBaseViews];
     [self registNotifications];
@@ -84,28 +84,28 @@ MTPaintWorksViewDelegate>
 {
     [super viewWillAppear:animated];
     
-    self.datalist = [[[MTLocalDataManager shareInstance] getNoteSelf] mutableCopy];
+    self.datalist = [[[FLPaintDBManager shareInstance] getPaintNoteSelf] mutableCopy];
     
     
-    NSString * path =[[MTMediaFileManager sharedManager] getMediaFilePathWithAndSanBoxType:SANBOX_DOCUMNET_TYPE AndMediaType:FILE_IMAGE_TYPE];
+    NSString * path =[[FLMediaFileManager sharedManager] getMediaFilePathWithAndSanBoxType:SANBOX_DOCUMNET_TYPE AndMediaType:FILE_IMAGE_TYPE];
     NSString *fileName = @"homeStyle";
     NSString *filePath = [NSString stringWithFormat:@"%@/%@",path,fileName];
     self.bgImageView.image = [UIImage imageWithContentsOfFile:filePath];
     
-    MTMeModel *meModel = [MTUserInfoDefault getUserDefaultMeModel];
+    FLPaintMeModel *meModel = [FLPaintUserInfoDefault getPaintUserDefaultMeModel];
     self.sectionView.name = meModel.name;
     [self.setView refreshData];
     
-    self.myPatingArray = [[MTUserInfoDefault getPaintArrays] mutableCopy];
+    self.myPatingArray = [[FLPaintUserInfoDefault getPaintingArrays] mutableCopy];
     [self.tableView reloadData];
 
 }
 #pragma mark - Views
 - (void)initBaseViews
 {
-    [self.tableView registerNib:[UINib nibWithNibName:@"MTHomeTextViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[MTHomeTextViewCell getIdentifier]];
+    [self.tableView registerNib:[UINib nibWithNibName:@"FLPaintHomeTextViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[FLPaintHomeTextViewCell getIdentifier]];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"MTMyPaintViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[MTMyPaintViewCell getIdentifier]];
+    [self.tableView registerNib:[UINib nibWithNibName:@"FLMyPaintViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[FLMyPaintViewCell getIdentifier]];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -216,13 +216,13 @@ MTPaintWorksViewDelegate>
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section) {
-        MTHomeTextViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[MTHomeTextViewCell getIdentifier]];
-        MTNoteModel *model = self.datalist[indexPath.row];
+        FLPaintHomeTextViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[FLPaintHomeTextViewCell getIdentifier]];
+        FLPaintNoteModel *model = self.datalist[indexPath.row];
         model.indexRow = indexPath.row;
         cell.model = model;
         return cell;
     } else {
-        MTMyPaintViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[MTMyPaintViewCell getIdentifier]];
+        FLMyPaintViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[FLMyPaintViewCell getIdentifier]];
         [cell setPageArray:self.myPatingArray];
         return cell;
     }
@@ -235,7 +235,7 @@ MTPaintWorksViewDelegate>
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    MTPaintSectionView *view = [MTPaintSectionView loadFromNib];
+    FLPaintingSectionView *view = [FLPaintingSectionView loadFromNib];
     view.frame = CGRectMake(0, 0, SCREEN_WIDTH, 35);
     view.titleLabel.text = section ? @"涂鸦作品" : @"涂鸦照片";
     return view;
@@ -243,7 +243,7 @@ MTPaintWorksViewDelegate>
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    MTHomeEmptyView *footView = [MTHomeEmptyView loadFromNib];
+    FLPaintHomeEmptyView *footView = [FLPaintHomeEmptyView loadFromNib];
     footView.delegate = self;
     
     if (section == 0) {
@@ -258,10 +258,10 @@ MTPaintWorksViewDelegate>
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     if (section == 0) {
-        return self.myPatingArray.count > 0 ? 0 : ([MTHomeEmptyView viewHeight] + 20);
+        return self.myPatingArray.count > 0 ? 0 : ([FLPaintHomeEmptyView viewHeight] + 20);
     }
     
-    return self.datalist.count > 0 ? 0.f : ([MTHomeEmptyView viewHeight] + 20);
+    return self.datalist.count > 0 ? 0.f : ([FLPaintHomeEmptyView viewHeight] + 20);
 }
 
 //先要设Cell可编辑
@@ -272,7 +272,7 @@ MTPaintWorksViewDelegate>
     UITableViewRowAction *readAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:readTitle handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
                                         {
                                             
-                                            [MTActionAlertView alertShowWithMessage:@"真的忍心要删除嘛？" leftTitle:@"是哒" leftColor:[UIColor colorWithHex:0xCD6256] rightTitle:@"不啦" rightColor:[UIColor colorWithHex:0x333333] callBack:^(NSInteger index) {
+                                            [FLPaintActionAlertView alertShowWithMessage:@"真的忍心要删除嘛？" leftTitle:@"是哒" leftColor:[UIColor colorWithHex:0xCD6256] rightTitle:@"不啦" rightColor:[UIColor colorWithHex:0x333333] callBack:^(NSInteger index) {
                                                 if (index == 2){
                                                     return;
                                                 }
@@ -281,8 +281,8 @@ MTPaintWorksViewDelegate>
                                                     
                                                    
                                                 } else {
-                                                    MTNoteModel *model = self.datalist[indexPath.row];
-                                                    [[MTLocalDataManager shareInstance]deleteNoteWithNoteId:model.noteId];
+                                                    FLPaintNoteModel *model = self.datalist[indexPath.row];
+                                                    [[FLPaintDBManager shareInstance]deletePaintNoteWithNoteId:model.noteId];
                                                     [self.datalist removeObjectAtIndex:indexPath.row];
                                                     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationAutomatic)];
                                                     [tableView setEditing:NO animated:YES];
@@ -313,7 +313,7 @@ MTPaintWorksViewDelegate>
 {
     
     if (indexPath.section) {
-        return [MTHomeTextViewCell heightForCellWithModel:self.datalist[indexPath.row]];
+        return [FLPaintHomeTextViewCell heightForCellWithModel:self.datalist[indexPath.row]];
     } else {
         return 160;
     }
@@ -321,8 +321,8 @@ MTPaintWorksViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MTNoteDetailViewController *detailVC = [[MTNoteDetailViewController alloc] init];
-    MTNoteModel *model = self.datalist[indexPath.row];
+    FLPaintNoteDetailController *detailVC = [[FLPaintNoteDetailController alloc] init];
+    FLPaintNoteModel *model = self.datalist[indexPath.row];
     detailVC.noteId = model.noteId;
     detailVC.color = model.sectionColor;
     detailVC.weather = model.weather;
@@ -330,10 +330,10 @@ MTPaintWorksViewDelegate>
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
-#pragma mark - MTHomeSectionViewDelegate
+#pragma mark - FLPaintHomeSectionViewDelegate
 - (void)homeNoteAction
 {
-    MTNoteViewController *noteVC = [[MTNoteViewController alloc] init];
+    FLPaintNoteViewController *noteVC = [[FLPaintNoteViewController alloc] init];
     [self.navigationController pushViewController:noteVC animated:YES];
 }
 
@@ -364,10 +364,10 @@ MTPaintWorksViewDelegate>
     self.paintBgView.hidden = (index != 0);
 }
 
-#pragma mark - MTHomeEmptyViewDelegate
+#pragma mark - FLPaintHomeEmptyViewDelegate
 - (void)emptyNoteAction
 {
-    MTNoteViewController *noteVC = [[MTNoteViewController alloc] init];
+    FLPaintNoteViewController *noteVC = [[FLPaintNoteViewController alloc] init];
     [self.navigationController pushViewController:noteVC animated:YES];
 }
 
@@ -375,7 +375,7 @@ MTPaintWorksViewDelegate>
 - (UIView *)sectionView
 {
     if (!_sectionView) {
-        _sectionView = [MTHomeSectionView loadFromNib];
+        _sectionView = [FLPaintHomeSectionView loadFromNib];
         _sectionView.frame = CGRectMake(0, 20, self.tableView.frame.size.width, 40);
         _sectionView.backgroundColor = [UIColor clearColor];
         _sectionView.delegate = self;
@@ -391,10 +391,10 @@ MTPaintWorksViewDelegate>
     return _datalist;
 }
 
-- (MTPaintWorksView *)paintView
+- (FLPaintingDealView *)paintView
 {
     if (!_paintView) {
-        _paintView = [MTPaintWorksView loadFromNib];
+        _paintView = [FLPaintingDealView loadFromNib];
         _paintView.hidden = YES;
         _paintView.frame = self.tableView.bounds;
         _paintView.delegate = self;

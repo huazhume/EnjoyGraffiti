@@ -2,7 +2,7 @@
 //  FLNotificationPo+CoreDataClass.h
 //  
 //
-//  Created by xiaobai zhang on 2020/8/29.
+//  Created by hua on 2020/8/29.
 //
 //
 

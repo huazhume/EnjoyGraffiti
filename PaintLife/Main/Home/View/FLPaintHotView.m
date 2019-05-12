@@ -2,7 +2,7 @@
 //  FLPaintHotView.m
 //  finbtc
 //
-//  Created by xiaobai zhang on 2020/12/11.
+//  Created by hua on 2020/12/11.
 //  Copyright © 2020年 MTY. All rights reserved.
 //
 

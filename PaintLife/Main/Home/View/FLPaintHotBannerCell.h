@@ -2,7 +2,7 @@
 //  FLPaintHotBannerCell.h
 //  finbtc
 //
-//  Created by xiaobai zhang on 2020/12/17.
+//  Created by hua on 2020/12/17.
 //  Copyright © 2020年 MTY. All rights reserved.
 //
 

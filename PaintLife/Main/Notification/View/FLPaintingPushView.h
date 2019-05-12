@@ -2,7 +2,7 @@
 //  FLPaintingPushView.h
 //  finbtc
 //
-//  Created by xiaobai zhang on 2020/7/31.
+//  Created by hua on 2020/7/31.
 //  Copyright © 2020年 MTY. All rights reserved.
 //
 

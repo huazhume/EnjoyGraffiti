@@ -3,7 +3,7 @@
 //  PaintLife
 //
 //  Created by huazhume on 2020/8/18.
-//  Copyright © 2020年 xiaobai zhang. All rights reserved.
+//  Copyright © 2020年 hua. All rights reserved.
 //
 
 #import "FLPaintSettingHeaderCell.h"

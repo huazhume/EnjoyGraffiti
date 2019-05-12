@@ -2,8 +2,8 @@
 //  FLPaintDBManager.h
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2020/8/9.
-//  Copyright © 2020年 xiaobai zhang. All rights reserved.
+//  Created by hua on 2020/8/9.
+//  Copyright © 2020年 hua. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

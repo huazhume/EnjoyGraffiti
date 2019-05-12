@@ -2,8 +2,8 @@
 //  PTStashFiles.h
 //  PaintLife
 //
-//  Created by xiaobai zhang on 2020/5/11.
-//  Copyright © 2020 xiaobai zhang. All rights reserved.
+//  Created by hua on 2020/5/11.
+//  Copyright © 2020 hua. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

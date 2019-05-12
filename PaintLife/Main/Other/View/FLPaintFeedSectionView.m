@@ -2,7 +2,7 @@
 //  FLPaintFeedSectionView.m
 //  finbtc
 //
-//  Created by xiaobai zhang on 2020/1/16.
+//  Created by hua on 2020/1/16.
 //  Copyright © 2020 MTY. All rights reserved.
 //
 

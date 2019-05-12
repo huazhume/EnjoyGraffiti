@@ -2,7 +2,7 @@
 //  FLPaintNoteTextPo+CoreDataProperties.m
 //
 //
-//  Created by xiaobai zhang on 2020/3/19.
+//  Created by hua on 2020/3/19.
 //
 //
 

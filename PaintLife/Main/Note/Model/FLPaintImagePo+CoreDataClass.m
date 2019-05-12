@@ -2,7 +2,7 @@
 //  FLPaintImagePo+CoreDataClass.m
 //  
 //
-//  Created by xiaobai zhang on 2020/8/9.
+//  Created by hua on 2020/8/9.
 //
 //
 
